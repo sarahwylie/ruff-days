@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS ruff_days;
+CREATE DATABASE ruff_days;
