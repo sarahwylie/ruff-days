@@ -1,24 +1,26 @@
-# ruff-days
+# Ruff Days
 
 ## Description
-The pandemic has left us all a little weird after years of isolation. Social skills in most of us are lacking, at best. The only member of the family who is still able to make friends is the dog, so why not exploit that talent?! 
+The pandemic has left us all a little weird after years of isolation. Social skills in most of us are lacking, at best. The only member of the family who is still able to make friends is the dog, so why not exploit that talent?! Set up a page for your dog, upload a photo and some basic information, then log in to find other socially inept weirdos to bond with!
 
 ## Table of Contents
 * [Usage](#usage)
 * [Installation](#installation)
+* [Collaborators](#collaborators)
 * [Tests](#tests)
 * [Badges](#badges)
 * [Queries](#any-questions)
 
 ## Usage
-<!-- Strap on your nerd vest securely and head over to [Talk Tech](https://sarahwylie.github.io/Talk-Tech/). Set up your account, then get blogging! -->
 
 ## Installation
-<!-- Visit [Talk Tech](https://sarahwylie.github.io/Talk-Tech/) to get started! -->
-
+Grab your poop bags and head over to [Ruff Days](WEBSITE-HERE) to meet your (dog's) new match!
 
 ## Output:
 ![Screenshot](./Screenshot.png)
+
+## Collaborators:
+[Greg Rouark](@Rouark20), [Michael Maresco](@michaelcmaresco), [Travis Bryant](@tbryant2)
 
 ## Tests
 Jest was used to test portions of the code in this project.
@@ -34,6 +36,6 @@ Jest was used to test portions of the code in this project.
 ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
 
 ### Any Questions?
-Contact [@sarahwylie](https://github.com/sarahwylie) on GitHub
+Contact [Team HHS2](https://github.com/sarahwylie) on GitHub
 
-© 2022 by Sarah Wylie
+© 2022 by HHS2
