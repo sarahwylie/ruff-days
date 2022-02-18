@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class DM extends Model {};
 
-Comment.init(
+DM.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -38,7 +38,7 @@ Comment.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'DM'
     }
 );
 
