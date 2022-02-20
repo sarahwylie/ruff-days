@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
     DM.create({
-        DMt_text: req.body.DM_text,
+        dm_text: req.body.dm_text,
         user_id: req.session.user_id,
         post_id: req.body.post_id
     })

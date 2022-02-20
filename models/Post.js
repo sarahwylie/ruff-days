@@ -2,8 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Post extends Model {
-  static tag(body, models) {
-    return models.create({
+  static like(body, models) {
+    return models.Like.create({
       user_id: body.user_id,
       post_id: body.post_id
     }).then(() => {
@@ -15,12 +15,13 @@ class Post extends Model {
           'id',
           'post_url',
           'title',
-          'created_at'
+          'created_at',
+          [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
         ],
         include: [
           {
             model: models.DM,
-            attributes: ['id', 'DM_text', 'post_id', 'user_id', 'created_at'],
+            attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
             include: {
               model: models.User,
               attributes: ['username']

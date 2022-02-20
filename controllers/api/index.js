@@ -5,6 +5,6 @@ const DMRoutes = require('./DM-routes');
 
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
-router.use('/DM', DMRoutes);
+router.use('/dm', DMRoutes);
 
 module.exports = router;

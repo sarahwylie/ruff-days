@@ -12,11 +12,12 @@ router.get('/', (req, res) => {
             'post_url',
             'title',
             'created_at',
+            [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
         ],
         include: [
             {
                 model: DM,
-                attributes: ['id', 'DM_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -45,11 +46,12 @@ router.get('/:id', (req, res) => {
             'post_url',
             'title',
             'created_at',
+            [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
         ],
         include: [
             {
                 model: DM,
-                attributes: ['id', 'DM_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -85,6 +87,17 @@ router.post('/', withAuth, (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+
+});
+router.put('/like', withAuth, (req, res) => {
+    if (req.session) {
+        Post.like({ ...req.body, user_id: req.session.user_id }, { Like, DM, User })
+            .then(updatedLikeData => res.json(updatedLikeData))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
 });
 
 

@@ -1,21 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class DM extends Model {};
+class Like extends Model { }
 
-DM.init(
+Like.init(
     {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
-        },
-        dm_text: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -35,11 +28,12 @@ DM.init(
         }
     },
     {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'dm'
+        sequelize,
+        timestamps: false,
+        freezeTableNames: true,
+        underscored: true,
+        modelName: 'like'
     }
 );
 
-module.exports = DM;
+module.exports = Like;

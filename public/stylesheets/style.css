@@ -53,6 +53,11 @@ button:hover {
   background-color: var(--secondary);
 }
 
+.like-btn {
+  background-color: #197d0f;
+  transition: background-color .1s;
+}
+
 .post-list {
   margin: 0;
   padding: 0;
