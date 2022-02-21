@@ -20,13 +20,13 @@ class Post extends Model {
         ],
         include: [
           {
-            model: models.DM,
-            attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
-            include: {
+            // model: models.DM,
+            // attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
+            // include: {
               model: models.User,
               attributes: ['username']
             }
-          }
+          // }
         ]
       });
     });
