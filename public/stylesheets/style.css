@@ -1,7 +1,7 @@
 :root {
-  --primary: #9dbdc6;
+  --primary: #9dc6be;
   --secondary: #daeaef;
-  --tertiary: #ff3d2e;
+  --tertiary: darkgreen;
   --light: #ffffff;
   --dark: #272f32;
   --border-radius: 0.3rem;
@@ -19,22 +19,26 @@
 body,
 html {
   height: 100%;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: var(--dark);
+  color: var(--tertiary);
+  background: url('../images/hannah-lim-U6nlG0Y5sfs-unsplash-copy.jpg');
+  /* Photo by <a href="https://unsplash.com/@hannah15198?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hannah Lim</a> on <a href="https://unsplash.com/s/photos/dogs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+  background-repeat: no-repeat;
+  background-size: cover
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: var(--tertiary);
   font-weight: bold;
   transition: color 0.1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: green;
 }
 
 button {
@@ -54,7 +58,7 @@ button:hover {
 }
 
 .like-btn {
-  background-color: #197d0f;
+  background-color: var(--tertiary);
   transition: background-color .1s;
 }
 
@@ -99,18 +103,23 @@ form label {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid var(--tertiary);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 1%;
   background-color: var(--primary);
+  opacity: .8;
   position: sticky;
   top: 0;
+  width: 100%;
+  border-radius: 25px;
+  text-shadow: 1px 1px var(--dark);
+  color: var(--tertiary)
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 2.5em;
 }
 
 main {
@@ -192,6 +201,10 @@ footer {
   display: flex;
   justify-content: center;
   padding: 1%;
-  font-size: 110%;
-  background-color: var(--primary)
+  font-size: 150%;
+  background-color: var(--primary);
+  border-radius: 25px;
+  text-shadow: 1px 1px var(--dark);
+  font-weight: 600;
 }
+

@@ -1,5 +1,5 @@
-// const sequelize = require('../config/connection');
-const { Post, User, DM, Like } = require('../models');
+const sequelize = require('../config/connection');
+const { Post, User, Like } = require('../models');
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
@@ -12,14 +12,14 @@ router.get('/', (req, res) => {
       'created_at',
     ],
     include: [
-      {
-        model: DM,
-        attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
+      // {
+      //   model: DM,
+      //   attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
+      //   include: {
+      //     model: User,
+      //     attributes: ['username']
+      //   }
+      // },
       {
         model: User,
         attributes: ['username']
@@ -53,14 +53,14 @@ router.get('/post/:id', (req, res) => {
       [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
     ],
     include: [
-      {
-        model: DM,
-        attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
+      // {
+      //   model: DM,
+      //   attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
+      //   include: {
+      //     model: User,
+      //     attributes: ['username']
+      //   }
+      // },
       {
         model: User,
         attributes: ['username']

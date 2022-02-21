@@ -14,24 +14,32 @@
       <h1>
         <a href="/">Ruff Days</a>
       </h1>
-      <nav>
+      {{!-- <nav>
         {{#if loggedIn}}
         <a href="/dashboard">Dashboard</a>
         <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
         <a href="/login">Login</a>
+        </br>
         <a href="/signup">Sign Up</a>
         {{/if}}
-      </nav>
+      </nav> --}}
     </header>
     <main>
+      <nav>
+        <button><a href="/login">Login</a></button>
+      </nav>
+      </br>
+      <nav>
+        <button><a href="/signup">Sign Up</a></button>
+      </nav>
       {{{ body }}}
     </main>
     <footer>
       Sniff you next time!
     </footer>
   </div>
-  
+
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}

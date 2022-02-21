@@ -1,6 +1,6 @@
 const User = require('./User');
 const Post = require('./Post');
-const DM = require('./DM');
+// const DM = require('./DM');
 const Like = require('./Like');
 
 // create associations
@@ -46,23 +46,23 @@ User.hasMany(Post, {
     foreignKey: 'post_id'
   });
   
-  DM.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-  });
+//   DM.belongsTo(User, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE'
+//   });
   
-  DM.belongsTo(Post, {
-    foreignKey: 'post_id',
-    onDelete: 'CASCADE'
-  });
+//   DM.belongsTo(Post, {
+//     foreignKey: 'post_id',
+//     onDelete: 'CASCADE'
+//   });
   
-  User.hasMany(DM, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-  });
+//   User.hasMany(DM, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE'
+//   });
   
-  Post.hasMany(DM, {
-    foreignKey: 'post_id'
-  });
+//   Post.hasMany(DM, {
+//     foreignKey: 'post_id'
+//   });
 
-module.exports = { User, Post, DM, Like };
+module.exports = { User, Post, Like };

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, DM } = require('../../models');
+const { Post, User, Like } = require('../../models');
 const withAuth = require('../../utils/auth');
 // const sequelize = require('../../config/connection');
 
@@ -12,17 +12,17 @@ router.get('/', (req, res) => {
             'post_url',
             'title',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
+            // [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
         ],
         include: [
-            {
-                model: DM,
-                attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
+            // {
+            //     model: DM,
+            //     attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
+            //     include: {
+            //         model: User,
+            //         attributes: ['username']
+            //     }
+            // },
             {
                 model: User,
                 attributes: ['username']
@@ -46,17 +46,17 @@ router.get('/:id', (req, res) => {
             'post_url',
             'title',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
+            // [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
         ],
         include: [
-            {
-                model: DM,
-                attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
+            // {
+            //     model: DM,
+            //     attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
+            //     include: {
+            //         model: User,
+            //         attributes: ['username']
+            //     }
+            // },
             {
                 model: User,
                 attributes: ['username']
@@ -91,7 +91,7 @@ router.post('/', withAuth, (req, res) => {
 });
 router.put('/like', withAuth, (req, res) => {
     if (req.session) {
-        Post.like({ ...req.body, user_id: req.session.user_id }, { Like, DM, User })
+        Post.like({ ...req.body, user_id: req.session.user_id }, { Like, User })
             .then(updatedLikeData => res.json(updatedLikeData))
             .catch(err => {
                 console.log(err);
