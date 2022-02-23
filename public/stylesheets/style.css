@@ -44,7 +44,7 @@ a:hover {
 button {
   background-color: var(--primary);
   border: 0;
-  padding: 1%;
+  padding: 4%;
   color: var(--dark);
   font-weight: bold;
   transition: background-color 0.1s;
