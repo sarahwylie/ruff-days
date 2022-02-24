@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
-            'post_url',
+            'breed',
             'username',
             'created_at',
             // [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'post_url',
+            'breed',
             'username',
             'created_at',
             // [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
@@ -79,7 +79,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Post.create({
         username: req.body.username,
-        post_url: req.body.post_url,
+        breed: req.body.breed,
         user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))

@@ -23,19 +23,19 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        attributes: ['id', 'username', 'breed', 'created_at']
       },
       // {
       //   model: DM,
       //   attributes: ['id', 'dm_text', 'created_at'],
       //   include: {
       //     model: Post,
-      //     attributes: ['title']
+      //     attributes: ['username']
       //   }
       // },
       {
         model: Post,
-        attributes: ['title'],
+        attributes: ['username'],
         through: Like,
         as: 'liked_posts'
       }

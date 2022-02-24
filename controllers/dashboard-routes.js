@@ -12,8 +12,8 @@ router.get('/', withAuth, (req, res) => {
         },
         attributes: [
             'id',
-            'post_url',
-            'title',
+            'breed',
+            'username',
             'created_at'
             // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
         ],
@@ -46,8 +46,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: [
             'id',
-            'post_url',
-            'title',
+            'breed',
+            'username',
             'created_at',
             // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
         ],
