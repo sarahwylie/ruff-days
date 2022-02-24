@@ -15,6 +15,11 @@
         <a href="/">Ruff Days</a>
       </h1>
     </header>
+    <div class="blurb">
+      <p>
+        The pandemic has left us all a little weird after years of isolation. Social skills in most of us are lacking, at best. The only member of the family who is still able to make friends is the dog, so why not exploit that talent?! Set up a page for your dog, upload a photo and some basic information, then log in to find other socially inept weirdos to bond with!
+      </p>
+    </div>
       <nav>
         {{#if loggedIn}}
         <a href="/dashboard">Dashboard</a>
@@ -29,9 +34,11 @@
           </h2>
         {{/if}}
       </nav>
+      {{#if loggedIn}}
     <main>
       {{{ body }}}
     </main>
+    {{/if}}
     <footer>
       Sniff you next time!
     </footer>

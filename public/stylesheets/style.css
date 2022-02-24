@@ -24,7 +24,7 @@ html {
   margin: 0;
   font-family: sans-serif;
   color: var(--tertiary);
-  background: url('../images/hannah-lim-U6nlG0Y5sfs-unsplash-copy.jpg');
+  background: url('../images/mas-pink.jpg');
   /* Photo by <a href="https://unsplash.com/@hannah15198?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hannah Lim</a> on <a href="https://unsplash.com/s/photos/dogs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
   background-repeat: no-repeat;
   background-size: cover
@@ -42,6 +42,16 @@ body nav {
     margin-top: 25%;
     border-radius: 10%;
     text-align: center;
+}
+
+.blurb {
+  width: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  margin-bottom: auto;
+  margin-top: 25%;
+  border-radius: 10%;
+  text-align: center;
 }
 
 a {
@@ -172,7 +182,7 @@ main {
   line-height: 150%;
 }
 
-.post .title span {
+.post .username span {
   font-style: italic;
   font-size: 90%;
   color: #7d7d7d;

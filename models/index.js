@@ -2,6 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 // const DM = require('./DM');
 const Like = require('./Like');
+// const Photo = require('./Photo');
 
 // create associations
 User.hasMany(Post, {
@@ -45,6 +46,11 @@ User.hasMany(Post, {
   Post.hasMany(Like, {
     foreignKey: 'post_id'
   });
+
+  // Photo.belongsTo(Post, {
+  //   foreignKey: 'post_id',
+  //   onDelete: 'CASCADE'
+  // })
   
 //   DM.belongsTo(User, {
 //     foreignKey: 'user_id',
