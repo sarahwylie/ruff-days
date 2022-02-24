@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'post_url',
-            'title',
+            'username',
             'created_at',
             // [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
         ],
@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'post_url',
-            'title',
+            'username',
             'created_at',
             // [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
         ],
@@ -78,7 +78,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
     Post.create({
-        title: req.body.title,
+        username: req.body.username,
         post_url: req.body.post_url,
         user_id: req.session.user_id
     })
@@ -103,7 +103,7 @@ router.put('/like', withAuth, (req, res) => {
 
 router.put('/:id', withAuth, (req, res) => {
     Post.update({
-        title: req.body.title
+        username: req.body.username
     },
         {
             where: {

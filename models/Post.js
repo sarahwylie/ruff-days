@@ -14,7 +14,7 @@ class Post extends Model {
         attributes: [
           'id',
           'post_url',
-          'title',
+          'username',
           'created_at',
           [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
         ],
@@ -41,7 +41,7 @@ Post.init(
         primaryKey: true,
         autoIncrement: true
       },
-      title: {
+      username: {
         type: DataTypes.STRING,
         allowNull: false
       },
