@@ -1,7 +1,7 @@
 :root {
-  --primary: #9dc6be;
+  --primary: #ffffff;
   --secondary: #daeaef;
-  --tertiary: darkgreen;
+  --tertiary: black;
   --light: #ffffff;
   --dark: #272f32;
   --border-radius: 0.3rem;
@@ -18,10 +18,9 @@
 
 body,
 html {
-  height: 100%;
   background-color: var(--primary);
+  height: 1000px;
   padding: 0;
-  margin: 0;
   font-family: sans-serif;
   color: var(--tertiary);
   background: url('../images/mas-pink.jpg');
@@ -30,7 +29,11 @@ html {
   background-size: cover
 }
 
-body {
+body div .login {
+  width: 25%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: auto;
+  border-radius: 10%;
   text-align: center;
 }
 
@@ -69,6 +72,7 @@ body nav .btn {
   font-size: larger;
 }
 
+
 a {
   text-decoration: none;
   color: var(--tertiary);
@@ -79,6 +83,7 @@ a {
 a:hover {
   color: white;
 }
+
 
 button {
   background-color: var(--primary);
@@ -92,8 +97,8 @@ button {
 }
 
 button:hover {
-  color: var(--dark);
-  background-color: var(--secondary);
+  color: black;
+  background-color: green;
 }
 
 .like-btn {
@@ -163,7 +168,6 @@ header h1 {
 
 main {
   flex: 1;
-  padding: 2% 4%;
 }
 
 .btn-no-style {
@@ -246,4 +250,3 @@ footer {
   text-shadow: 1px 1px var(--dark);
   font-weight: 600;
 }
-
