@@ -30,6 +30,20 @@ html {
   background-size: cover
 }
 
+body {
+  text-align: center;
+}
+
+body nav {
+  width: 25%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
+    margin-bottom: auto;
+    margin-top: 25%;
+    border-radius: 10%;
+    text-align: center;
+}
+
 a {
   text-decoration: none;
   color: var(--tertiary);
@@ -38,13 +52,13 @@ a {
 }
 
 a:hover {
-  color: green;
+  color: white;
 }
 
 button {
   background-color: var(--primary);
   border: 0;
-  padding: 1%;
+  padding: 4%;
   color: var(--dark);
   font-weight: bold;
   transition: background-color 0.1s;
