@@ -1,10 +1,5 @@
 # Ruff Days
 
-## TRAVIS: Login/out and authentication
-## SARAH: Photo and profile page
-## GREG: Homepage MVC (or one component)
-## MICHAEL: The every man (mostly controllers)
-
 ## Description
 The pandemic has left us all a little weird after years of isolation. Social skills in most of us are lacking, at best. The only member of the family who is still able to make friends is the dog, so why not exploit that talent?! Set up a page for your dog, upload a photo and some basic information, then log in to find other socially inept weirdos to bond with!
 
