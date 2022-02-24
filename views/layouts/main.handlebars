@@ -15,6 +15,7 @@
         <a href="/">Ruff Days</a>
       </h1>
     </header>
+<<<<<<< HEAD
       <nav>
         {{#if loggedIn}}
         <a href="/dashboard">Dashboard</a>
@@ -36,14 +37,43 @@
       {{{ body }}}
     </main>
     </div>
+=======
+    <nav>
+      {{#if loggedIn}}
+      <a href="/dashboard">Dashboard</a>
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <div class="blurb">
+        <p>
+          The pandemic has left us all a little weird after years of isolation. Social skills in most of us are lacking,
+          at best. The only member of the family who is still able to make friends is the dog, so why not exploit that
+          talent?! Set up a page for your dog, upload a photo and some basic information, then log in to find other
+          socially inept weirdos to bond with!
+        </p>
+      </div>
+      <h2>
+        <a href="/login">Login</a>
+      </h2>
+      </br>
+      <h2>
+        <a href="/signup">Sign Up</a>
+      </h2>
+      {{/if}}
+    </nav>
+    {{#if loggedIn}}
+    <main>
+      {{{ body }}}
+    </main>
+    {{/if}}
+>>>>>>> 23d158128eee4370a449c875d6e31b7c9c413307
     <footer>
       Sniff you next time!
     </footer>
   </div>
 
   {{#if loggedIn}}
+    <button><a href="/logout">Logout</a></button></button>
   <script src="/javascript/logout.js"></script>
   {{/if}}
 </body>
-
-</html>
+</html> 
