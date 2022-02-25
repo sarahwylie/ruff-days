@@ -14,7 +14,8 @@ class Post extends Model {
         attributes: [
           'id',
           'breed',
-          'username',
+          'dogname',
+          'image',
           'created_at',
           [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
         ],
@@ -23,9 +24,9 @@ class Post extends Model {
             // model: models.DM,
             // attributes: ['id', 'dm_text', 'post_id', 'user_id', 'created_at'],
             // include: {
-              model: models.User,
-              attributes: ['username']
-            }
+            model: models.User,
+            attributes: ['username']
+          }
           // }
         ]
       });
@@ -34,35 +35,38 @@ class Post extends Model {
 }
 
 Post.init(
-    {
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
-      },
-      username: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      breed: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'id'
-        }
-      }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
     },
-    {
-      sequelize,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'post'
+    breed: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    dogname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    image: {
+      type: DataTypes.BLOB
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
-  );
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'post'
+  }
+);
 
-  module.exports = Post;
+module.exports = Post;

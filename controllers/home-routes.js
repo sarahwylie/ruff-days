@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
       'breed',
-      'username',
+      'dogname',
+      'image',
       'created_at',
     ],
     include: [
@@ -48,7 +49,8 @@ router.get('/post/:id', (req, res) => {
     attributes: [
       'id',
       'breed',
-      'username',
+      'dogname',
+      'image',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
     ],

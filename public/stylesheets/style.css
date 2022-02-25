@@ -1,7 +1,7 @@
 :root {
   --primary: #ffffff;
   --secondary: #daeaef;
-  --tertiary: black;
+  --tertiary: green;
   --light: #ffffff;
   --dark: #272f32;
   --border-radius: 0.3rem;
@@ -201,7 +201,7 @@ main {
   line-height: 150%;
 }
 
-.post .username span {
+.post .dogname span {
   font-style: italic;
   font-size: 90%;
   color: #7d7d7d;

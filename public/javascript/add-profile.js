@@ -1,13 +1,13 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const username = document.querySelector('input[name="post-username"]').value;
+    const dogname = document.querySelector('input[name="post-dogname"]').value;
     const breed = document.querySelector('input[name="breed"]').value;
 
     const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
-            username, 
+            dogname, 
             breed
         }),
         headers: {

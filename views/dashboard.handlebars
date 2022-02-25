@@ -3,17 +3,20 @@
 
     <form class="new-post-form">
         <div>
-            <label for="post-username">Dog Name</label>
-            <input type="text" id="post-username" name="post-username" />
+            <label for="post-dogname">Dog Name</label>
+            <input type="text" id="post-dogname" name="post-dogname" />
         </div>
         <div>
             <label for="breed">Breed</label>
             <input type="text" id="breed" name="breed" />
         </div>
+        <form action="/post" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" />Upload Photo
+        </form>
         <button type="submit" class="btn">Create</button>
     </form>
 </section>
-      {{{ body }}}
+
 {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>

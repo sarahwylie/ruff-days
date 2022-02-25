@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { Post, User, Like } = require('../../models');
 const withAuth = require('../../utils/auth');
 // const sequelize = require('../../config/connection');
+const multer  = require('multer')
+const upload = multer({ dest: '../../public/data/uploads' })
+const cpUpload = upload.fields([{ name: 'image', maxCount: 1 }])
+
 
 // get all users
 router.get('/', (req, res) => {
@@ -10,7 +14,8 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'breed',
-            'username',
+            'dogname',
+            'image',
             'created_at',
             // [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
         ],
@@ -44,7 +49,8 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'breed',
-            'username',
+            'dogname',
+            'image',
             'created_at',
             // [sequelize.literal('(SELECT COUNT(*) FROM dm WHERE post.id = dm.post_id)'), 'dm_count']
         ],
@@ -76,10 +82,11 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/dashboard', upload.single('image'), withAuth, (req, res) => {
     Post.create({
-        username: req.body.username,
+        dogname: req.body.dogname,
         breed: req.body.breed,
+        image: req.file.image,
         user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
@@ -103,7 +110,7 @@ router.put('/like', withAuth, (req, res) => {
 
 router.put('/:id', withAuth, (req, res) => {
     Post.update({
-        username: req.body.username
+        dogname: req.body.dogname
     },
         {
             where: {

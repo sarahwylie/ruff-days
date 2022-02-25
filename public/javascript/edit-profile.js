@@ -1,14 +1,14 @@
 async function editFormHandler(event) {
     event.preventDefault();
   
-    const username = document.querySelector('input[name="post-username"]').value.trim();
+    const dogname = document.querySelector('input[name="post-dogname"]').value.trim();
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
     const response = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
-        username
+        dogname
       }),
       headers: {
         'Content-Type': 'application/json'

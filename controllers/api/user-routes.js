@@ -1,6 +1,7 @@
 const router = require('express').Router();
 // const withAuth = require('../../utils/auth');
 const { User, Post, Like } = require('../../models/');
+// const cpUpload = upload.fields([{ name: 'image', maxCount: 1 }])
 
 router.get('/', (req, res) => {
   User.findAll({
@@ -23,7 +24,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'username', 'breed', 'created_at']
+        attributes: ['id', 'dogname', 'breed', 'image', 'created_at']
       },
       // {
       //   model: DM,
@@ -35,7 +36,7 @@ router.get('/:id', (req, res) => {
       // },
       {
         model: Post,
-        attributes: ['username'],
+        attributes: ['dogname'],
         through: Like,
         as: 'liked_posts'
       }
