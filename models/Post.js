@@ -51,7 +51,7 @@ Post.init(
       allowNull: false
     },
     image: {
-      type: DataTypes.BLOB
+      type: DataTypes.BLOB,
     },
     user_id: {
       type: DataTypes.INTEGER,

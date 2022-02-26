@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ruff Days</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="icon" type="image/jpg" sizes="48x48" href="../../db/uploads/pexels-steshka-willems-1390361.jpg">
 </head>
 
 <body>
@@ -15,7 +16,12 @@
         <a href="/">Ruff Days</a>
       </h1>
     </header>
+    {{#if loggedIn}}
+    <a href="/dashboard">Dashboard</a>
+    <button id="logout" class="btn-no-style">Logout</button>
+    </nav>
 
+    {{else}}
     <div class="blurb">
       <p>
         The pandemic has left us all a little weird after years of isolation. Social skills in most of us are lacking,
@@ -25,40 +31,31 @@
       </p>
     </div>
     <nav>
-      {{#if loggedIn}}
-      <a href="/dashboard">Dashboard</a>
-      <button id="logout" class="btn-no-style">Logout</button>
-    </nav>
-    {{else}}
-    <nav>
-      <div class="flex-container">
-        <div class="btn flex-child">
-          <h2>
-            <a href="/login">Login</a>
-          </h2>
+      <nav>
+        <div class="flex-container">
+          <div class="btn flex-child">
+            <h2>
+              <a href="/login">Login</a>
+            </h2>
+          </div>
+          <div class="flex-child">
+          </div>
+          <div class="btn flex-child">
+            <h2>
+              <a href="/signup">Sign Up</a>
+            </h2>
+          </div>
         </div>
-        <div class="flex-child">
-        </div>
-        <div class="btn flex-child">
-          <h2>
-            <a href="/signup">Sign Up</a>
-          </h2>
-        </div>
-      </div>
-    </nav>
-    <main>
+      </nav>
+      {{/if}}    
+      <main>
       {{{ body }}}
     </main>
-    {{/if}}
-    <footer>
-      Sniff you next time!
-    </footer>
+      <footer>
+        Sniff you next time!
+      </footer>
   </div>
-
-
-
   {{#if loggedIn}}
-  <button><a href="/logout">Logout</a></button></button>
   <script src="/javascript/logout.js"></script>
   {{/if}}
 </body>
