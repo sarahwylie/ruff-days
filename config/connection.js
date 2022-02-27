@@ -15,9 +15,9 @@ sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.
 };
 
 module.exports = sequelize;
-module.exports = {
-    HOST: "us-cdbr-east-05.cleardb.net",
-    USER: "bd4138b73e4e0a",
-    PASSWORD: "f1a2048e",
-    DB: "heroku_1c97565e8eb2718"
-}
+// module.exports = {
+//     HOST: "us-cdbr-east-05.cleardb.net",
+//     USER: "bd4138b73e4e0a",
+//     PASSWORD: "f1a2048e",
+//     DB: "heroku_1c97565e8eb2718"
+// }

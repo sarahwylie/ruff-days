@@ -17,7 +17,7 @@ The pandemic has left us all a little weird after years of isolation. Social ski
 Grab your poop bags and head over to [Ruff Days](WEBSITE-HERE) to meet your (dog's) new match!
 
 ## Output:
-![Screenshot](./Screenshot.png)
+![Screenshot](./public/images/Screenshot.png)
 
 ## Collaborators:
 [Greg Rouark](@Rouark20), [Michael Maresco](@michaelcmaresco), [Travis Bryant](@tbryant2)
